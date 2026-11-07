@@ -1,0 +1,150 @@
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #131313;
+  background: #f7f4f0; 
+  --color-accent: #7a4f32; 
+  --color-bg-white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+.header, main, .footer { 
+  width: min(1200px, calc(100% - 40px)); 
+  margin-inline: auto; 
+}
+
+/* Шапка */
+.header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 24px; }
+.logo { font-weight: 700; font-size: 20px; line-height: 1.2; }
+.nav { display: flex; gap: 28px; font-weight: 500; font-size: 18px; }
+.button-login { padding: 12px 28px; background: #e3d2c3; border: none; border-radius: 8px; font-weight: 600; font-size: 16px; cursor: pointer; }
+.menu-button { display: none; padding: 10px 14px; border: 1px solid #131313; border-radius: 8px; background: transparent; }
+
+/* Главный экран */
+.hero { background: #eaddd3; padding: 60px 40px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-bottom: 40px;}
+.hero-content { flex: 1; }
+.hero h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.2; margin-bottom: 16px; }
+.hero p { font-size: 18px; color: #555; line-height: 1.4; margin: 0; }
+.hero-img { max-width: 55%; height: auto; border-radius: 12px; }
+
+/* Общие стили секций */
+.section { padding-block: 40px; }
+.section-heading h2 { font-size: 36px; margin-bottom: 30px; text-align: center; }
+
+/* Табы */
+.tabs-placeholder { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+.tabs-placeholder button { padding: 12px 24px; font-size: 16px; border: 1px solid #ccc; border-radius: 8px; background: transparent; cursor: pointer; }
+.tabs-placeholder .is-active { color: #fff; background: var(--color-accent); border-color: var(--color-accent); }
+
+/* Сетка карточек */
+.grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; }
+.project-card { background: #e3d2c3; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; width: 100%; max-width: 360px; }
+.project-img { 
+  width: 100%; 
+  height: auto; /* Позволяет картинкам растянуться в полный рост */
+  border-radius: 8px; 
+  margin-bottom: 16px; 
+  background: transparent; 
+}
+.project-card h3 { margin: 0 0 8px 0; font-size: 22px; }
+.project-card p { margin: 0; font-size: 16px; color: #555; }
+
+/* Слайдер новостей */
+.slider-container { display: flex; align-items: center; gap: 20px; justify-content: center; }
+.slider-arrow { background: none; border: none; font-size: 40px; cursor: pointer; padding: 0 10px; color: #131313; }
+.slider-content { display: flex; background: var(--color-bg-white); border-radius: 20px; padding: 40px; gap: 40px; align-items: center; max-width: 1000px; width: 100%; }
+.slider-content p { font-size: 28px; line-height: 1.4; flex: 1; margin: 0; }
+.slider-img { width: 450px; height: 280px; object-fit: cover; border-radius: 12px; }
+
+/* Аккордеон (FAQ) */
+.faq-section { max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--color-bg-white); border-radius: 16px; padding: 24px 30px; margin-bottom: 16px; }
+.faq-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.faq-header h3 { margin: 0; font-size: 20px; line-height: 1.4; padding-right: 20px; }
+.faq-icon { font-size: 24px; font-weight: bold; flex-shrink: 0; }
+.faq-item p { margin: 16px 0 0 0; color: #555; line-height: 1.6; font-size: 16px; }
+
+/* Подвал */
+.footer { border-top: 1px solid #ccc; padding-block: 40px; margin-top: 20px; }
+.footer-content { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 16px; }
+.footer-links { display: flex; gap: 24px; }
+.diagnostic { font-size: 14px; color: #888; text-align: center; }
+.status--ready { color: #17633b; }
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 900px) {
+  .nav, .button-login { display: none; }
+  .menu-button { display: inline-flex; }
+  .hero { flex-direction: column; text-align: center; gap: 30px; padding: 40px 20px; }
+  .hero-img { max-width: 100%; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .slider-content { flex-direction: column; text-align: center; padding: 30px; gap: 20px; }
+  .slider-img { width: 100%; height: auto; }
+}
+
+/* Модальное окно (Dialog) */
+.modal {
+  border: none;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 400px;
+  width: 90%;
+  background: var(--color-bg-white);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.6); /* Темный фон позади окна */
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+.modal h2 { margin-top: 0; }
+
+/* Форма в модалке */
+.modal-form { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group input[type="text"], .form-group input[type="email"] {
+  padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-family: inherit;
+}
+/* Стили для ошибок валидации формы */
+.form-group.has-error input { border-color: #d93025; }
+.error-message { color: #d93025; font-size: 12px; display: none; }
+.form-group.has-error .error-message { display: block; }
+.checkbox-group { flex-direction: row; align-items: center; gap: 10px; }
+.button-submit { padding: 12px; background: var(--color-accent); color: #fff; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; }
+.success-message { color: #17633b; font-weight: bold; text-align: center; }
+
+/* Уведомление о Cookies */
+.cookie-notice {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.cookie-notice p { margin: 0; font-size: 14px; }
+.cookie-btn { background: #e3d2c3; color: #131313; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .footer-content { flex-direction: column; gap: 15px; align-items: center; }
+}

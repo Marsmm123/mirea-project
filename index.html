@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кафедра компьютерного дизайна</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+  </head>
+  
+  <body>
+    <header class="header" data-js="menu">
+      <a class="logo" href="#top">&lt;/&gt; Кафедра<br>компьютерного дизайна</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#catalog">Каталог</a>
+        <a href="#students">Студенты</a>
+        <a href="#disciplines">Дисциплины</a>
+        <a href="#news">Новости</a>
+        <a href="#faq">О кафедре</a>
+      </nav>
+      <button class="button-login" type="button" data-js="login-btn">Вход</button>
+      <button class="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false">Меню</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Онлайн-пространство<br>для просмотра работ студентов<br>кафедры компьютерного дизайна</h1>
+          <p>Изучайте работы, находите вдохновение<br>и следуйте за новостями кафедры.</p>
+        </div>
+        <img src="monitor.png" alt="Рабочее место дизайнера" class="hero-img">
+      </section>
+
+      <section class="section" id="catalog" data-js="tabs">
+        <div class="section-heading">
+          <h2>Каталог работ</h2>
+        </div>
+        <div class="tabs-placeholder">
+          <button class="is-active" type="button">1 курс</button>
+          <button type="button">2 курс</button>
+          <button type="button">3 курс</button>
+          <button type="button">4 курс</button>
+        </div>
+        <div class="grid">
+          <article class="project-card">
+            <img src="project-1.png" alt="Макет страницы каталога" class="project-img">
+            <h3>Каталог работ</h3>
+            <p>Фирстов Максим</p>
+          </article>
+          <article class="project-card">
+            <img src="project-2.png" alt="Макет профиля студента" class="project-img">
+            <h3>Профиль студента</h3>
+            <p>Фирстов Максим</p>
+          </article>
+          <article class="project-card">
+            <img src="project-3.png" alt="Макет страницы проекта" class="project-img">
+            <h3>Страница проекта</h3>
+            <p>Фирстов Максим</p>
+          </article>
+          <article class="project-card">
+            <img src="project-4.png" alt="Дизайн интерфейса" class="project-img">
+            <h3>Дизайн интерфейса</h3>
+            <p>Фирстов Максим</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="news" data-js="slider">
+        <div class="section-heading">
+          <h2>Новости и уведомления</h2>
+        </div>
+        <div class="slider-container">
+          <button class="slider-arrow" aria-label="Назад">&lt;</button>
+          <div class="slider-content">
+            <p>Выпускник Детского технопарка «Альтаир» РТУ МИРЭА создал мессенджер «МыС»...</p>
+            <img src="news.png" alt="Презентация проекта" class="slider-img">
+          </div>
+          <button class="slider-arrow" aria-label="Вперед">&gt;</button>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq" data-js="accordion">
+        <div class="section-heading">
+          <h2>Часто задаваемые вопросы</h2>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item is-open">
+            <div class="faq-header">
+              <h3>Как загрузить свою работу в общее портфолио кафедры?</h3>
+              <span class="faq-icon">✕</span>
+            </div>
+            <p>Для публикации проекта перейдите в личный кабинет, выберите раздел «Мои работы» и нажмите «Добавить проект». Потребуется прикрепить исходники макетов и заполнить текстовое описание.</p>
+          </article>
+          <article class="faq-item">
+            <div class="faq-header">
+              <h3>Какое программное обеспечение доступно студентам в лабораториях?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <p hidden>В компьютерных классах РТУ МИРЭА установлены актуальные версии Adobe Creative Cloud, Figma, Blender и 3ds Max для выполнения практических заданий.</p>
+          </article>
+          <article class="faq-item">
+            <div class="faq-header">
+              <h3>Допускается ли использование нейросетей при создании макетов?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <p hidden>Использование ИИ разрешено на этапе генерации референсов или вспомогательных элементов. Основная композиция, типографика и верстка должны быть выполнены студентом самостоятельно.</p>
+          </article>
+          <article class="faq-item">
+            <div class="faq-header">
+              <h3>Где найти методические указания к практическим работам?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <p hidden>Все актуальные методички и требования к оформлению проектов прикреплены в карточках соответствующих дисциплин в разделе «Каталог».</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2026 Кафедра компьютерного дизайна</p>
+        <div class="footer-links">
+          <a href="#">Контакты</a>
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Помощь</a>
+        </div>
+      </div>
+      <p class="diagnostic">Диагностика: <strong data-js-status>проверяем подключение…</strong></p>
+    </footer>
+    <!-- Модальное окно (Диалог) с формой -->
+    <dialog class="modal" id="loginModal" data-js="modal">
+      <div class="modal-content">
+        <button class="modal-close" type="button" aria-label="Закрыть окно" data-js="modal-close">✕</button>
+        <h2>Оставить заявку</h2>
+        <form class="modal-form" id="contactForm" data-js="form" novalidate>
+          <div class="form-group">
+            <label for="userName">Ваше имя *</label>
+            <input type="text" id="userName" name="userName" required>
+            <span class="error-message">Поле не должно быть пустым</span>
+          </div>
+          
+          <div class="form-group">
+            <label for="userEmail">Email *</label>
+            <input type="email" id="userEmail" name="userEmail" required>
+            <span class="error-message">Введите корректный email</span>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="userConsent" name="userConsent" required>
+            <label for="userConsent">Согласен на обработку данных *</label>
+            <span class="error-message">Необходимо согласие</span>
+          </div>
+
+          <button type="submit" class="button-submit">Отправить</button>
+          <p class="success-message" hidden>Форма успешно отправлена!</p>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Уведомление о cookies -->
+    <div class="cookie-notice" data-js="cookie-notice">
+      <p>Мы используем файлы cookie для улучшения работы сайта.</p>
+      <button type="button" class="cookie-btn" data-js="cookie-btn">Понятно</button>
+    </div>
+  </body>
+</html>
