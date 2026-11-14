@@ -110,10 +110,9 @@ function initSlider() {
   const text = slider.querySelector('.slider-content p');
   
   // Создаем счетчик слайдов и добавляем его в HTML
-  const counter = document.createElement('div');
-  counter.style.fontWeight = 'bold';
-  counter.style.marginTop = '20px';
-  text.parentElement.appendChild(counter);
+    const counter = document.createElement('div');
+    counter.classList.add('slider-counter'); // Подключаем CSS-класс
+    text.parentElement.appendChild(counter);
 
   // Данные для слайдов
   const slides = [
