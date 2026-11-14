@@ -144,6 +144,76 @@ a { color: inherit; text-decoration: none; }
 .cookie-notice p { margin: 0; font-size: 14px; }
 .cookie-btn { background: #e3d2c3; color: #131313; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
 
+/* --- ДОПОЛНИТЕЛЬНАЯ ЧАСТЬ (Плавность и доступность) --- */
+
+/* 1. Плавные переходы для всех интерактивных элементов */
+button, a, input, .faq-item p, .project-card {
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. Заметность фокуса при управлении с клавиатуры (доступность) */
+button:focus-visible, input:focus-visible, a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* 3. Наведение на табы и карточки */
+.tabs-placeholder button:hover {
+  background-color: #d4c3b3;
+  transform: translateY(-2px);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* 4. Наведение на кнопки слайдера */
+.slider-arrow:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* 5. Оформление счетчика слайдов */
+.slider-counter {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 14px;
+  background: #e3d2c3;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #131313;
+}
+
+/* 6. Плавное появление модального окна и красивое затемнение фона */
+.modal[open] {
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Размытие заднего фона */
+  animation: backdropFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 7. Анимация тряски при ошибке в форме */
+.error-message {
+  animation: shake 0.3s ease-in-out;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
 @media (max-width: 600px) {
   .grid { grid-template-columns: 1fr; }
   .footer-content { flex-direction: column; gap: 15px; align-items: center; }
